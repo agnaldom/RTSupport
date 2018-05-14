@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class ChannelForm extends Comment{
+class ChannelForm extends Component{
     onSubmit(e){
         e.preventDefault();
         const node = this.refs.channel;
@@ -11,17 +12,21 @@ class ChannelForm extends Comment{
     render(){
         return(
             <form onSubmit={this.onSubmit.bind(this)}>
-                <input 
-                    type='text'
-                    ref='channel'
-                />
+                <div className='form-group'>
+                    <input 
+                        className='form-control'
+                        placeholder='Add Channel'
+                        type='text'
+                        ref='channel'
+                    />
+                </div>   
             </form>
         )
     }
 }
 
 ChannelForm.propTypes = {
-    addChannel: React.PropTypes.func.isRequired
+    addChannel: PropTypes.func.isRequired
 }
 
 export default ChannelForm;
