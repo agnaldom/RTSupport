@@ -4,6 +4,8 @@ import fecha from 'fecha';
 
 class Message extends Component{
     render(){
+        let {message} = this.props;
+        let createdAt = fecha.format(fecha.parse(message.createdAt, 'YYYY-MM-DDTTHH:mm:SS.SS-ZZ'), 'HH:mm:ss MM/DD/YY')
         return(
             <li className='message'>
                 <div className='author'>
